@@ -1,10 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace SistemaLogistica.Models;
 
-namespace SistemaLogistica
+public abstract class FuncionarioTransporte
 {
-    internal class FuncionarioTransporte
+    public string Nome { get; set; }
+    public string Registro { get; set; }
+
+    protected FuncionarioTransporte(string nome, string registro)
     {
+        Nome = nome;
+        Registro = registro;
+    }
+
+    public virtual void MostrarDetalhes()
+    {
+        Console.WriteLine($"Nome: {Nome}");
+        Console.WriteLine($"Registro: {Registro}");
     }
 }
